@@ -136,9 +136,22 @@
 //     println!("The value of x isa {x}");
 // }
 
+// fn main(){
+//     let mut x=5;
+//     println!("The value of x is:{x}");
+//     x=6;
+//     println!("The value of x isa {x}");
+// }
+//mut provides an option to update the value of the variable.
+
+///writing basic functions in rust
+
+///hamesha kisi function ko varible ke through call karo
 fn main(){
-    let mut x=5;
-    println!("The value of x is:{x}");
-    x=6;
-    println!("The value of x isa {x}");
+   
+  let result = do_sum(7,5);
+  println!("The sum is {}",result);
+}
+fn do_sum(a:i32,b:i32)->i32{
+    return a+b;
 }
