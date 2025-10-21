@@ -116,12 +116,29 @@
 // }
 
 // pub fn get_first_name(str:String)->String{
-    let mut first_name=String::from("");
-    for c in str.chars(){
-        if c == ' ' {
-            break
-    }
-    first_name.push(c);
-}
-  return first_name;
+
+//     let mut first_name=String::from("");
+//     for c in str.chars(){
+//         if c == ' ' {
+//             break
+//     }
+//     first_name.push(c);
+// }
+//   return first_name;
+// }
+
+
+/////mutable vs immutable
+// fn main(){
+//     let x=5;
+//     println!("The value of x is:{x}");
+//     x=6;
+//     println!("The value of x isa {x}");
+// }
+
+fn main(){
+    let mut x=5;
+    println!("The value of x is:{x}");
+    x=6;
+    println!("The value of x isa {x}");
 }
