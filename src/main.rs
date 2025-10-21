@@ -52,8 +52,19 @@
 //     println!("{}",name);
 
 // }
-fn main(){
-   let name:String=String::from ("KumarSaurabh");
-    println!("{}",name);
-}
+// fn main(){
+//    let name:String=String::from ("KumarSaurabh");
+//     println!("{}",name);
+// }
 /////i faced case sensitivity issue here.i.e. string=String(wrong)
+
+
+///////Arrays
+// fn main(){
+//     let arr:[i32;5]=[1,2,3,4,5];
+//     println!("{}",arr.len());
+// }
+// fn main(){
+//     let arr:[i32;6]=[1,2,3,-4,5,6];
+//     println!("{}",arr.len());
+// }
