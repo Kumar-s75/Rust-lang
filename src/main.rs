@@ -17,17 +17,43 @@
 
 //Booleans
 //simple boolean function
-fn main(){
-    let a=5;
-   if  is_even(a){
-    println!("{} is even",a);
+// fn main(){
+//     let a=5;
+//    if  is_even(a){
+//     println!("{} is even",a);
 
-   } else{
-    println!("{} is odd",a  );
-}
-}
+//    } else{
+//     println!("{} is odd",a );
+// }
+// }
 
-fn is_even(a:u32)->bool{
-    return a%2==0;
-}
+// fn is_even(a:u32)->bool{
+//     return a%2==0;
+// }
 ///
+// fn main(){
+//     let is_male=true;
+//     let is_above_18=true;
+
+//     if is_male{
+//         println!("You are a male");
+
+//     } else{
+//         println!("You are not a male");
+//     }
+
+//     if is_male && is_above_18{
+//         println!("You are a legal male");
+//     }
+// }
+//////  strings
+// fn main(){
+//     let name=String::from("KumarSaurabh");
+//     println!("{}",name);
+
+// }
+fn main(){
+   let name:String=String::from ("KumarSaurabh");
+    println!("{}",name);
+}
+/////i faced case sensitivity issue here.i.e. string=String(wrong)
