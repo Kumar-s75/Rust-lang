@@ -90,3 +90,38 @@
 
 //     println!("After:{}",xs.len());
 // }
+
+/////Conditionals,loops
+///we dont use parantheses after if statement in case of Rust
+/// 1st example
+// pub fn main(){
+//     let x=99;
+//     let is_even=is_even(x);
+//     if is_even {
+//         println!("{} is even",x);
+//     }
+//     else{
+//         println!("{} is odd",x);
+//     }
+// }
+
+// pub fn is_even(x:i32)->bool{
+//     return x%2==0;
+// }
+
+///2nd example
+// pub fn main(){
+//     let str=String::from("kumar saurabh");
+//     println!("First Name {}",get_first_name(str));
+// }
+
+// pub fn get_first_name(str:String)->String{
+    let mut first_name=String::from("");
+    for c in str.chars(){
+        if c == ' ' {
+            break
+    }
+    first_name.push(c);
+}
+  return first_name;
+}
