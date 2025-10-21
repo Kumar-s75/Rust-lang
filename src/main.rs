@@ -68,3 +68,25 @@
 //     let arr:[i32;6]=[1,2,3,-4,5,6];
 //     println!("{}",arr.len());
 // }
+
+////vectors
+
+// fn main(){
+//     let mut xs=vec![1,2,3];
+    
+//     print!("{}",xs.len());
+
+//     xs.push(4);
+
+//     print!("{}",xs.len());
+// }
+
+// fn main(){
+//     let mut xs=vec![1,2,3];
+
+//     println!("Before:{}",xs.len());
+
+//     xs.push(4);
+
+//     println!("After:{}",xs.len());
+// }
