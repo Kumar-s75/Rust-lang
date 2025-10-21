@@ -147,11 +147,40 @@
 ///writing basic functions in rust
 
 ///hamesha kisi function ko varible ke through call karo
-fn main(){
+// fn main(){
    
-  let result = do_sum(7,5);
-  println!("The sum is {}",result);
-}
-fn do_sum(a:i32,b:i32)->i32{
-    return a+b;
-}
+//   let result = do_sum(7,5);
+//   println!("The sum is {}",result);
+// }
+// fn do_sum(a:i32,b:i32)->i32{
+//     return a+b;
+// }
+
+/////ownership of heap variables
+// fn main(){
+//     let str=String::from("KumarSaurabh");
+//     let len=get_length(str);
+//     println!("{}",len);
+
+//     println!("{}",str);
+// }
+// fn get_length(str:String)->usize{
+//    return str.len();
+// }
+// This code fails because the ownership of str is moved to the get_length function.
+//  Once the function’s scope ends, the str variable is no longer valid.
+
+//There are possibly two fixes of these one can be 
+//fix1 -transferring back ownership
+// fn main(){
+//     let str=String::from("KumarSaurabh");
+//     let (str,len)=get_length(str);
+//     println!("{} {}",str,len);
+
+// }
+
+// fn get_length(str:String)->(String,usize){
+//     let len=str.len();
+//     return (str,len);
+// }
+///#fix2-
