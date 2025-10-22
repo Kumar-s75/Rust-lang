@@ -312,3 +312,36 @@ fn main(){
 fn change_name(user:User1){
     print!("User 1 username :{:?}",user1.active);
 }
+/*Implementing structs*/
+ /*Passing in &self as the first argument to a function */
+struct Rect{
+  width:u32,
+  height:u32,
+}
+impl Rect{
+    fn area(&self)->u32{
+        self.width*self.height
+    }
+}
+fn main(){
+    let rect=Rect{
+        width:30,
+        height:50,
+    };
+    print!("The area of rectnagle is {}",rect.area());
+}
+ /*not passing &self as an argument*/
+ struct Rect{
+    width:u32,
+    height:u32,
+ }
+
+ impl Rect{
+    fn print_str(){
+        println!("Inside the rect struct");
+    }
+ }
+
+ fn main(){
+    Rect::print_str();
+ }
