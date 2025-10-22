@@ -171,7 +171,7 @@
 //  Once the function’s scope ends, the str variable is no longer valid.
 
 //There are possibly two fixes of these one can be 
-//fix1 -transferring back ownership
+
 // fn main(){
 //     let str=String::from("KumarSaurabh");
 //     let (str,len)=get_length(str);
@@ -183,4 +183,36 @@
 //     let len=str.len();
 //     return (str,len);
 // }
-///#fix2-
+
+fn main() {
+    let str = String::from("Kumar");
+    let len = get_length(str);
+    println!("{}", len);
+
+    print!("{}", str);
+}
+
+fn get_length(str: String) -> usize {
+    return str.len()
+}
+
+///immutable reference and mutable referemce
+fn main(){
+    let mut s1:String=String:: from ("Kumar");
+    s1.push_str(string:"Saurabh");
+    let s2:&String=&mut s1;
+    s2.push_str(string:"Saurabh 2");
+    
+}
+/*if we use &mut then mutable reference and if only & immutable reference */
+
+fn main(){
+    let s1=String:: from ("Kumar");
+    let s2=&s1;
+    let s3=&s1;
+    let s4=&s1;
+
+    println!("{},{},{},{}",s1,s2,s3,s4);
+
+}
+
