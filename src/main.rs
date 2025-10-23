@@ -402,3 +402,17 @@ fn main(){
     println!("Area of square: {}",calaculated_area(square));
     println!("Area of rectangle:{}",calculated_area(rectangle));
 }
+
+/*error handling in rust */
+use std::fs::File;
+
+fn main(){
+    let greeting_file_result=fs::read_to_string("hello.txt");
+}
+ /*In case you are okay with errors then you can write Unwraps*/
+ use std::fs;
+
+ fn main(){
+    let greeting_file_result=fs::read_to_string("hello to txt");
+    print!("{}",greeting_file_result.unwrap());
+ }
