@@ -379,3 +379,4 @@ fn main(){
     let square=Shape::Square(4.0);
     let rectangle=Shape::Rectangle(3.0,6.0)
 }
+
