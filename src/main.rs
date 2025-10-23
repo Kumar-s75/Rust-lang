@@ -380,3 +380,25 @@ fn main(){
     let rectangle=Shape::Rectangle(3.0,6.0)
 }
 
+///enum paatern matching
+enum  Shape{
+    Circle(f64),
+    Square(f64),
+    Rectangle(f64,f64),
+}
+fn calculated_area(shape:Shape)->f64{
+    match shape{
+        Shape::Circle(radius)=>PI*radius*radius,
+        Shape::Square(side_length)=>side_length*side_length,
+        Shape::Rectangle(width,height)=>width*height,
+    }
+}
+fn main(){
+    let circle=Shape::Circle(5.0),
+    let Square=Shape::Square(4.0),
+    let rectangle=Shape::Rectangle(3.0,6.0)
+
+    println!("Area of Circle is:{}",calculated_area(circle));
+    println!("Area of square: {}",calaculated_area(square));
+    println!("Area of rectangle:{}",calculated_area(rectangle));
+}
