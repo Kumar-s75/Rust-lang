@@ -510,3 +510,16 @@ fn does_exist<T:PartialEq>(v:Vec<T>,element:T)->bool{
     }
     return false;
 }
+
+fn biggest_element<T:Ord>(a:T,b:T)->T{
+    if a>b{
+        return a;
+    }
+    return b;
+}
+
+use std::fmt::Display;
+
+fn print_variable<T:Display>(a:T){
+    println!("{}",a);
+}
