@@ -469,3 +469,15 @@ fn main(){
 
 /*unwraps are not good at all if value exists it gets stored and if it isn't then it   provides error */
 
+//sum_u32
+fn sum_u32(a:u32,b:u32)->u32{
+    return a+b;
+}
+
+
+
+//sum_f32
+fn sum_f32(a:f32,b:f32)->f32{
+    return a+b;
+}
+
