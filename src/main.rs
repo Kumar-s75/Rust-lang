@@ -481,3 +481,32 @@ fn sum_f32(a:f32,b:f32)->f32{
     return a+b;
 }
 
+
+
+/*Generics*/
+
+/*create a first_element*/
+
+pub fn main(){
+    let v =vec![1,2,3];
+    let v2=vec![String::from("Harkirat"),String::from ("Singh")];
+    let v3=vec![1.0,2.0,3.0];
+    println!("{}",first_element(v).unwrap());
+    println!("{}",first_element(v).unwrap());
+    println!("{}",first_element(v).unwrap());
+
+}
+
+fn first_element<T>(v:Vec<T>)->Option<T>{
+    return v.into_iter().nth(0);
+}
+
+fn does_exist<T:PartialEq>(v:Vec<T>,element:T)->bool{
+    let mut iter=v.iter();
+    while let Some(value)=iter.next(){
+        if *value==element{
+            return true;
+        }
+    }
+    return false;
+}
