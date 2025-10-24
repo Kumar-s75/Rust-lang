@@ -314,125 +314,137 @@ fn change_name(user:User1){
 }
 /*Implementing structs*/
  /*Passing in &self as the first argument to a function */
-struct Rect{
-  width:u32,
-  height:u32,
-}
-impl Rect{
-    fn area(&self)->u32{
-        self.width*self.height
-    }
-}
+// struct Rect{
+//   width:u32,
+//   height:u32,
+// }
+// impl Rect{
+//     fn area(&self)->u32{
+//         self.width*self.height
+//     }
+// }
+// fn main(){
+//     let rect=Rect{
+//         width:30,
+//         height:50,
+//     };
+//     print!("The area of rectnagle is {}",rect.area());
+// }
+//  /*not passing &self as an argument*/
+//  struct Rect{
+//     width:u32,
+//     height:u32,
+//  }
+
+//  impl Rect{
+//     fn print_str(){
+//         println!("Inside the rect struct");
+//     }
+//  }
+
+//  fn main(){
+//     Rect::print_str();
+//  }
+
+//  /*enums*/
+
+//  enum Direction{
+//     North,
+//     East,
+//     South,
+//     West
+//  }
+//  fn main(){
+//     let my_direction=Direction::North;
+//     let new_direction=my_direction;
+//     move_around(new_direction);
+//  }
+//  fn move_around(direction:Direction){
+//     //implements logic to move a character around
+//  }
+// /* enums with values*/
+// enum Shape(){
+//     Circle(f64),
+//     Square(f64),
+//     Rectangle(f64,f64)
+
+// }
+
+// fn calculated_area(shape:Shape)->f64{
+//     return 0
+// }
+
+// fn main(){
+//     let circle=Shape::Circle(5.0);
+//     let square=Shape::Square(4.0);
+//     let rectangle=Shape::Rectangle(3.0,6.0)
+// }
+
+// ///enum paatern matching
+// enum  Shape{
+//     Circle(f64),
+//     Square(f64),
+//     Rectangle(f64,f64),
+// }
+// fn calculated_area(shape:Shape)->f64{
+//     match shape{
+//         Shape::Circle(radius)=>PI*radius*radius,
+//         Shape::Square(side_length)=>side_length*side_length,
+//         Shape::Rectangle(width,height)=>width*height,
+//     }
+// }
+// fn main(){
+//     let circle=Shape::Circle(5.0),
+//     let Square=Shape::Square(4.0),
+//     let rectangle=Shape::Rectangle(3.0,6.0)
+
+//     println!("Area of Circle is:{}",calculated_area(circle));
+//     println!("Area of square: {}",calaculated_area(square));
+//     println!("Area of rectangle:{}",calculated_area(rectangle));
+// }
+
+// /*error handling in rust */
+// use std::fs::File;
+
+// fn main(){
+//     let greeting_file_result=fs::read_to_string("hello.txt");
+// }
+//  /*In case you are okay with errors then you can write Unwraps*/
+//  use std::fs;
+
+//  fn main(){
+//     let greeting_file_result=fs::read_to_string("hello to txt");
+//     print!("{}",greeting_file_result.unwrap());
+//  }
+
+// /*option enums*/
+// /*instead of null return option */
+// fn main(){
+//     let my_string=String::from("raman");
+//     match find_first_a(my_string){
+//         Some(index)=>println!("The letter 'a' is found at index:{}",index),
+//         None=>println!("The letter 'a' is not found in String.");
+//     }
+
+// }
+// fn find_first_a(s:String)->Option<i32>{
+//     for(index,character) in s.chars().enumerate(){
+//         if character=='a'{
+//             return Some(index as i32);
+
+//     }
+// }
+// return None;
+// }
+
+/*crates */
+use chrono::{Local,Utc},
+/*use chrono::prelude*/
 fn main(){
-    let rect=Rect{
-        width:30,
-        height:50,
-    };
-    print!("The area of rectnagle is {}",rect.area());
-}
- /*not passing &self as an argument*/
- struct Rect{
-    width:u32,
-    height:u32,
- }
-
- impl Rect{
-    fn print_str(){
-        println!("Inside the rect struct");
-    }
- }
-
- fn main(){
-    Rect::print_str();
- }
-
- /*enums*/
-
- enum Direction{
-    North,
-    East,
-    South,
-    West
- }
- fn main(){
-    let my_direction=Direction::North;
-    let new_direction=my_direction;
-    move_around(new_direction);
- }
- fn move_around(direction:Direction){
-    //implements logic to move a character around
- }
-/* enums with values*/
-enum Shape(){
-    Circle(f64),
-    Square(f64),
-    Rectangle(f64,f64)
-
+    let utc_time=Utc::now();
+    let local_time=Local::now();
+    println!("local time is {}",utc_time);
+    println!("native time is {}",local_time);
 }
 
-fn calculated_area(shape:Shape)->f64{
-    return 0
-}
 
-fn main(){
-    let circle=Shape::Circle(5.0);
-    let square=Shape::Square(4.0);
-    let rectangle=Shape::Rectangle(3.0,6.0)
-}
-
-///enum paatern matching
-enum  Shape{
-    Circle(f64),
-    Square(f64),
-    Rectangle(f64,f64),
-}
-fn calculated_area(shape:Shape)->f64{
-    match shape{
-        Shape::Circle(radius)=>PI*radius*radius,
-        Shape::Square(side_length)=>side_length*side_length,
-        Shape::Rectangle(width,height)=>width*height,
-    }
-}
-fn main(){
-    let circle=Shape::Circle(5.0),
-    let Square=Shape::Square(4.0),
-    let rectangle=Shape::Rectangle(3.0,6.0)
-
-    println!("Area of Circle is:{}",calculated_area(circle));
-    println!("Area of square: {}",calaculated_area(square));
-    println!("Area of rectangle:{}",calculated_area(rectangle));
-}
-
-/*error handling in rust */
-use std::fs::File;
-
-fn main(){
-    let greeting_file_result=fs::read_to_string("hello.txt");
-}
- /*In case you are okay with errors then you can write Unwraps*/
- use std::fs;
-
- fn main(){
-    let greeting_file_result=fs::read_to_string("hello to txt");
-    print!("{}",greeting_file_result.unwrap());
- }
-
-/*option enums*/
-/*instead of null return option */
-fn main(){
-    let my_string=String::from("raman");
-    match find_first_a(my_string){
-        Some(index)=>println!("The letter 'a' is found at index:{}",index),
-        None=>println!("The letter 'a' is not found in String.");
-    }
-
-}
-fn find_first_a(s:String)->Option<i32>{
-    for(index,character) in s.chars().enumerate(){
-        if character=='a'{
-            return Some(index as i32);
-
-    }
-}
-return None;
-}
