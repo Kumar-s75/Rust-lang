@@ -548,3 +548,34 @@ impl Rect<u32>{
         return self.height*self.width
     }
 }
+
+// */trait*/
+trait Shape{
+    fn area(&self)->f32;
+}
+
+struct Rect{
+    width:f32,
+    height:f32
+}
+
+impl Shape for Rect{
+    fn area(&self)->f32{
+        return self.width*self.height
+    }
+}
+
+fn get_area(shape:impl Shape)->f32{
+    return shape.area();
+}
+
+fn get_area_2<T:Shape>(shape:T)->f32{
+    return shape.area();
+}
+
+fn get_area_3<T>(shape:T)->f32{
+    where T:Shape
+    {
+        return shape.area();
+    }
+}
