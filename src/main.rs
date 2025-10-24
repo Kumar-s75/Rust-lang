@@ -452,7 +452,7 @@ use std::env;
 
 fn main(){
     dotenv().ok();
-    let var=env::var("REDIS_ADDRESS").unwrap;
+    let var=env::var("REDIS_ADDRESS").unwrap();
     println!("{}",var);
 
 
@@ -466,4 +466,6 @@ fn main(){
     println!("{}",random_uuid);
 }
 
+
+/*unwraps are not good at all if value exists it gets stored and if it isn't then it   provides error */
 
