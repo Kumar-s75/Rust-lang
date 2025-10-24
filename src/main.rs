@@ -579,3 +579,31 @@ fn get_area_3<T>(shape:T)->f32{
         return shape.area();
     }
 }
+
+/*macros*/
+/*declerative macros*/
+macro_rules! say_hello{
+    ()=>{
+        println!("Hello World!");
+
+    };
+}
+
+fn main(){
+    say_hello!();
+}
+
+macro_rules! create_function{
+    ($func_name:ident)=>{
+        fn $func_name(){
+            println!("Hello from {}",stringify!($func_name));
+        }
+    };
+
+}
+
+create_function!(hello);
+
+fn main(){
+    hello();
+}
