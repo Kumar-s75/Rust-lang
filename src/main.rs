@@ -447,4 +447,23 @@ fn main(){
     println!("native time is {}",local_time);
 }
 
+use dotenv::dotenv;
+use std::env;
+
+fn main(){
+    dotenv().ok();
+    let var=env::var("REDIS_ADDRESS").unwrap;
+    println!("{}",var);
+
+
+}
+
+/*uuid*/
+use uuid::Uuid;
+
+fn main(){
+    let random_uuid=Uuid::new_v4();
+    println!("{}",random_uuid);
+}
+
 
