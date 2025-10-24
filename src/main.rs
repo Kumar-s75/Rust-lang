@@ -523,3 +523,28 @@ use std::fmt::Display;
 fn print_variable<T:Display>(a:T){
     println!("{}",a);
 }
+
+/*Generics over structs */
+struct Rect<T>{
+    width:T,
+    height:T,
+}
+impl<T:Mul<Output=T>+Copy> Rect<T>{
+    pub fn area(&self)->T{
+        return self.height*self.width
+    }
+}
+
+fn main(){
+    let r=Rect{
+        width:10,
+        height:20
+    };
+    println!("{}",r.area());
+}
+
+impl Rect<u32>{
+    pub fn area(&self)->T{
+        return self.height*self.width
+    }
+}
