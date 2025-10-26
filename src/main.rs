@@ -607,3 +607,28 @@ create_function!(hello);
 fn main(){
     hello();
 }
+
+/*procedural macros */
+#[derive(Serialize, DeSerialize)]
+struct User{
+    username:String,
+    password:String,
+    age:u32
+}
+
+/*custom derived macros*/
+#[derive(Serialize,DeSerialize)]
+struct User{
+    username:String,
+    password:String,
+    age:u32
+}
+#[route("GET")]
+fn home(){
+    println!("Welcome to the home page!");
+
+}
+#[route("POST")]
+fn create_post(){
+    println!("Creating a new post!");
+}
