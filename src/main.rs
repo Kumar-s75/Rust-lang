@@ -660,3 +660,23 @@ fn main(){
      println!("{}",json);
       // Prints: {"user_name":"Alice","pass_word":"password123","user_age":30}
 }
+
+/*Debug and Display trait*/
+struct Rect{
+   width:u32,
+   height:u32
+}
+fn main(){
+    let s=Rect{
+      width:100,
+      height:100
+    };
+    println!("{}",s);
+}
+
+/*Display trait*/
+impl std::fmt::Display for Rect{
+    fn fmt(&self,f:&mut fmt::Formatter<'_>)->fmt::Result{
+        write!(f,"({},{})",self.width,self.height)
+    }
+}
