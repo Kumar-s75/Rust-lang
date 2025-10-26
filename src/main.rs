@@ -632,3 +632,6 @@ fn home(){
 fn create_post(){
     println!("Creating a new post!");
 }
+
+/*function derived macros*/
+
