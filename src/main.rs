@@ -700,3 +700,18 @@ fn main(){
     };
     println!("{:?}",s);
 }
+/*Debug using debug macro*/
+use std::fmt;
+
+// #[derive(Debug)]
+struct Rect{
+    width:u32,
+    height:u32
+}
+fn main(){
+  let s=Rect{
+    width:100,
+    height:100
+  };
+  println!("{:?}",s);
+}
