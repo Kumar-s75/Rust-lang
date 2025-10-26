@@ -723,3 +723,19 @@ fn main(){
 
 }
 /*clone trait*/
+// #[derive(Clone)]
+struct Person{
+    name:String,
+    age:u32,
+
+}
+func main(){
+    let person1=Person{
+        name:String::from("Alice"),
+        age:30,
+    };
+    let person2=person1.clone();
+
+    println!("person1:{},{}",person1.name,person1.age);
+    println!("person2:{},{}",person2.name,person2.age);
+}
