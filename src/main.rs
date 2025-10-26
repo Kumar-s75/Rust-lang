@@ -680,3 +680,23 @@ impl std::fmt::Display for Rect{
         write!(f,"({},{})",self.width,self.height)
     }
 }
+
+/*Debug*/
+use std::fmt;
+struct Rect{
+    width:u32,
+    height:u32
+}
+impl std::fmt::Debug for Rect{
+    fn fmt(&self,f: &mut fmt::Formatter<'_>)->fmt::Result{
+        write!(f,"({},{})",self.width,self.height);
+
+    }
+}
+fn main(){
+    let s=Rect{
+        width:100,
+        height:100
+    };
+    println!("{:?}",s);
+}
